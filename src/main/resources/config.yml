@@ -1,0 +1,4 @@
+urls:
+  - https://api.mcsrvstat.us/2/play.khavalon.com
+  - https://api.mcsrvstat.us/2/play.asthonia.com
+interval: 40 #request intervals in ticks

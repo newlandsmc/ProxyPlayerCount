@@ -1,0 +1,4 @@
+name: ProxyPlayerCount
+version: '${project.version}'
+main: com.semivanilla.proxyplayercount.ProxyPlayerCount
+api-version: 1.18
