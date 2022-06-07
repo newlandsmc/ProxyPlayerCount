@@ -22,6 +22,7 @@ import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.util.Iterator;
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -76,10 +77,15 @@ public final class ProxyPlayerCount extends JavaPlugin implements Listener {
 
     @EventHandler
     public void onPing(PaperServerListPingEvent event) {
-        event.setNumPlayers(playerCount);
-        while (event.iterator().hasNext()) {
-            event.iterator().next();
-            event.iterator().remove();
+        try {
+            event.setNumPlayers(playerCount);
+            Iterator<Player> iterator = event.iterator();
+            while (iterator.hasNext()) {
+                iterator.next();
+                iterator.remove();
+            }
+        } catch (IllegalStateException e) {
+
         }
     }
 }
